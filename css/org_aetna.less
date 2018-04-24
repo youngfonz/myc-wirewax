@@ -1,0 +1,90 @@
+
+@import "colors";
+
+.org-aetna-demo {
+  .brand-icon {
+    background-image: url('/static/img/aetna/aetna-white.png') !important;
+  }
+  .splash-container {
+    .splash-video-container {
+      .cover {
+        background-color: rgba(0,0,0,0.4);
+      }
+    }
+    .sidebar-container {
+
+      /**** COLORS ****/
+      &.welcome-container {
+        background: #002776;
+      }
+      &.login-container {
+        background: #a8b400;
+      }
+      &.login-confirm-container {
+        background: #002776;
+      }
+      &.onboarding-container {
+        background: #a8b400;
+      }
+
+      &.welcome-container {
+        .logo {
+          width: 128px;
+          height: 128px;
+          background-image: url('/static/img/aetna/aetna-white.png')
+        }
+        .login-button {
+          color: white;
+          border: 1px solid white;
+          border-image: none;
+        }
+      }
+    }
+  }
+
+  .home-container {
+    .body-container .sidebar-container {
+      .header {
+        background: #002776;
+
+        .icon {
+          width: 120px;
+          height: 50px;
+          background: url("/static/img/aetna/aetna-white.png") no-repeat center center;
+          background-size: contain;
+        }
+      }
+      .footer {
+        background: #002776;
+      }
+    }
+    .right-menu {
+      .header, .footer {
+        background:  #002776;
+      }
+    }
+  }
+  .channel-list-container .channel-list .channel-card .detail .watch-now {
+    background: #0d3f96;
+  }
+
+  .channel-video-page-container {
+    background: radial-gradient(#004a87,#58ace1);
+    background-size: cover;
+    .channel-overlay {
+      .top-bar {
+        .chat-button {
+          background-color: #0d3f96;
+        }
+      }
+    }
+    .comment-container .header .chat-type.active {
+      .line {
+        background: #0d3f96;
+      }
+      .icon {
+        background: #0d3f96;
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.channel-preview-container {
+  background: black;
+
+  .video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-height: 100%;
+      min-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 180vw;
+      max-width: 220vh;
+      transform: translate(-50%,-50%);
+      background: transparent;
+    }
+  }
+  .login-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    background: rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .inset {
+      width: 620px;
+      height: 450px;
+      padding: 0 40px;
+
+      background: rgba(0,0,0,0.4);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .inner {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .brand-icon {
+        height: 90px;
+        align-self: stretch;
+        background: transparent no-repeat center center;
+        background-size: contain;
+      }
+      .title {
+        padding: 20px 0 30px;
+        color: white;
+        font-size: 30px;
+        font-family: 'Open Sans';
+        font-weight: bold;
+      }
+      .description {
+        color: white;
+        font-size: 15px;
+        font-family: 'Open Sans';
+        text-align: center;
+      }
+      .input-container {
+        input {
+          width: 400px;
+          margin-top: 25px;
+          padding: 10px 20px;
+
+          border-radius: 5px;
+          background: white;
+          border: none;
+          outline: none;
+
+          color: #333;
+          font-size: 15px;
+          font-family: 'Open Sans';
+        }
+      }
+      .button {
+        width: 150px;
+        margin-top: 25px;
+        padding: 13px 0;
+        background: white;
+        border-radius: 5px;
+
+        color: black;
+        font-size: 16px;
+        font-family: 'Open Sans';
+        font-weight: bold;
+        text-align: center;
+
+        cursor: pointer;
+      }
+    }
+  }
+}

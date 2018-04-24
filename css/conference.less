@@ -1,0 +1,613 @@
+@import "colors";
+
+.rounded-corner-video-box {
+  transform: rotate(0.000001deg);
+  border-radius: 20%;
+  overflow: hidden;
+}
+
+.camera-on-off-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: transparent url('/static/img/videocam-red.png') no-repeat center center;
+  background-size: 32px;
+  cursor: pointer;
+
+  &.off {
+    background-image: url('/static/img/videocam-white.png');
+  }
+}
+
+.mic-on-off-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: transparent url('/static/img/mic-white.png') no-repeat center center;
+  background-size: 22px 32px;
+  cursor: pointer;
+
+  &.off {
+    background-image: url('/static/img/mic-grey.png');
+  }
+}
+
+.audio-video-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+
+  .mic-and-video-buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .join-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    .button {
+      margin-right: 20px;
+
+      .basic-blue-button;
+    }
+  }
+}
+
+.create-conference-container {
+  .create-conference-header {
+    font-weight: bold;
+    font-size: 1.17em;
+  }
+
+  .enter-conference-container {
+    width: 60%;
+    text-align: right;
+    margin-bottom: 15px;
+  }
+
+  .create-conference-form-field-container {
+    input {
+      padding: 10px;
+      border: none;
+      border-bottom: solid 2px #c9c9c9;
+    }
+  }
+}
+
+.conference-feed-placeholder {
+  height: 100%;
+  width: 90%;
+  max-height: 100%;
+  max-width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background: linear-gradient(to right bottom, rgb(8, 12, 34), rgb(65, 67, 96));
+
+  .brand {
+    font-size: 20px;
+    font-family: 'Open Sans';
+    font-weight: 100;
+    letter-spacing: 5px;
+  }
+
+  .icon {
+    width: 84px;
+    height: 84px;
+    margin-bottom: 22px;
+
+    background: url('/static/img/myc/logo.png') no-repeat;
+    background-size: contain;
+  }
+}
+
+.conference-page-join-container {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100%;
+  min-width: 100%;
+  background: black;
+
+  .conference-video-channel-overlay {
+    z-index: 1000000;
+
+    &.faded .auto-fade {
+      opacity: 0.0;
+      transition: opacity 1s;
+    }
+
+    .top-bar {
+
+      .top-bar;
+
+      .channel-video {
+        margin-left: 10px;
+        flex: 1;
+        align-self: stretch;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .channel-name {
+          .channel-name-top-bar;
+        }
+        .video-title {
+          margin-top: 9px;
+          .video-title-top-bar;
+        }
+      }
+    }
+  }
+
+  .auto-fade {
+    transition: opacity 1s;
+  }
+
+  .conference-join-container {
+    align-self: stretch;
+    flex: 1;
+
+    color: #fff;
+    background: rgba(0, 0, 0, 0.75);
+
+    .local-video-preview {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: stretch;
+
+      position: absolute;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      text-align: center;
+
+      .conf-feed-video-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        &.hide {
+          display: flex;
+          justify-content: center;
+
+          video, object {
+            width: 0px;
+          }
+        }
+
+        video, object {
+          height: 100%;
+        }
+      }
+    }
+
+    .local-video-controls {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+
+      .audio-video-buttons {
+        .button {
+          margin: 0px;
+        }
+      }
+    }
+  }
+}
+
+.conference-page-container {
+  display: flex;
+  align-content: flex-start;
+  min-height: 100%;
+  min-width: 100%;
+  background: black;
+
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  &.chat-open {
+    .loading-overlay {
+      right: 399px;
+    }
+  }
+
+  .loading-overlay {
+    left: 50px;
+  }
+
+  .auto-fade {
+    transition: opacity 1s;
+  }
+
+  &.faded .auto-fade {
+    opacity: 0.0;
+  }
+
+  .channel-sidebar-container {
+    max-width: 0px;
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: black;
+    transition: width .25s ease-in-out;
+
+    &.open {
+      max-width: 400px;
+    }
+  }
+
+  .conference-video-channel-overlay {
+    z-index: 1000000;
+
+    &.faded .auto-fade {
+      opacity: 0.0;
+      transition: opacity 1s;
+    }
+
+    .top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      background: rgba(0,0,0,0.5);
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .channel-video {
+        margin-left: 10px;
+        flex: 1;
+        align-self: stretch;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        .channel-name {
+          color: white;
+          font-size: 12px;
+          font-family: 'Open Sans';
+        }
+        .video-title {
+          margin-top: 9px;
+          color: white;
+          font-size: 17px;
+          font-family: 'Open Sans';
+          font-weight: 300;
+        }
+      }
+
+      .chat-button {
+        height: 36px;
+        margin-right: 22px;
+        padding: 0 12px 0 9px;
+        border-radius: 3px;
+
+        background: white;
+        cursor: pointer;
+
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        &.open {
+          width: 36px;
+          padding: 0;
+
+          .text, .count {
+            display: none;
+          }
+          .icon {
+            margin: 0;
+            background-image: url('/static/img/close-grey.png');
+          }
+        }
+
+        .icon {
+          height: 20px;
+          width: 20px;
+          margin-right: 6px;
+          margin-top: -3px;
+          background: url('/static/img/chat-grey.png') no-repeat center center;
+          background-size: contain;
+        }
+        .text {
+          color: black;
+          font-size: 14px;
+          font-family: 'Open Sans';
+        }
+        .count {
+          display: none;
+        }
+
+        &:hover .icon {
+          background-image: url('/static/img/chat-yellow.png');
+        }
+        &:hover.open .icon {
+          background-image: url('/static/img/close-yellow.png');
+        }
+      }
+    }
+  }
+
+  .conference-video-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    position: relative;
+
+     .slides-and-peers {
+       display: flex;
+       flex: 1;
+     }
+
+    &.one-quarter .slides-and-peers  {
+      flex-direction: column-reverse;
+
+      .presentation-container {
+        flex: 1;
+        min-height: 60%;
+      }
+    }
+
+    &.one-half .slides-and-peers {
+      flex-direction: row;
+
+      .presentation-container {
+        flex: 1;
+        width: 50%;
+      }
+    }
+
+    &.no-video .slides-and-peers  {
+      .presentation-container {
+        flex: 1;
+      }
+    }
+
+    .remote-feeds {
+      flex: 1;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+
+      flex: 1;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+
+      overflow: hidden;
+      align-self: stretch;
+      padding: 5px 0px 5px 0px;
+
+      .remote-feed {
+        min-width: 300px;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+        position: relative;
+
+        .static_sized_css_fix {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .conf-feed-video-container {
+            width: 100%;
+            height: 100%;
+
+            &.hide {
+              display: flex;
+              justify-content: center;
+
+              video, object {
+                width: 0px;
+              }
+            }
+
+            video, object {
+              width: 100%;
+              max-width: 100%;
+              height: 100%;
+              max-height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .local-feed {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: stretch;
+
+      .local-feed-video {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: stretch;
+
+        .conf-feed-video-container {
+          width: 100%;
+          height: 100%;
+
+          &.hide {
+            display: flex;
+            justify-content: center;
+
+            video, object {
+              width: 0px;
+            }
+          }
+        }
+      }
+
+      &.with-remote-feeds {
+        min-width: 100%;
+        max-height: 147px;
+        text-align: center;
+        padding-bottom: 20px;
+
+        .local-feed-video {
+          position: relative;
+
+          .conf-feed-video-container {
+
+            &.hide {
+              display: flex;
+              justify-content: center;
+
+              video, object {
+                width: 0px;
+              }
+
+              .conference-feed-placeholder {
+                width: 190px;
+                height: 125px;
+              }
+            }
+
+            video,object {
+              width: 167px;
+              height: 125px;
+            }
+          }
+        }
+      }
+
+      .local-feed-video {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      video,object {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+
+    .conference-video-controls {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      background: rgba(0,0,0,0.5);
+      height: 60px;
+      justify-content: flex-start;
+
+      .left, .right {
+        flex: 1;
+        align-self: stretch;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .right {
+        padding: 0 25px;
+        justify-content: flex-end;
+      }
+
+      .left {
+
+        .count-up-timer-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-content: center;
+          align-items: center;
+
+          font-size: 14px;
+          font-family: "Open Sans";
+          margin-left: 10px;
+          min-width: 75px;
+
+          .minutes {
+            flex: 0 0 auto;
+          }
+
+          .seconds {
+            flex: 0 0 auto;
+          }
+
+          .divider {
+            flex: 0 0 auto;
+          }
+        }
+
+        .audio-video-buttons {
+          flex: 1;
+          max-width: 120px;
+
+          img {
+            height: 32px;
+            padding: 14px 14px 14px 0px;
+          }
+
+          img:first-child {
+            padding: 14px;
+          }
+        }
+
+        .volume-slider {
+          justify-content: flex-start;
+        }
+      }
+
+      .format-controls {
+        justify-content: flex-end;
+      }
+    }
+  }
+}

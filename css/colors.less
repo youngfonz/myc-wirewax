@@ -1,0 +1,123 @@
+
+@channel-blue: #218bbe;
+@channel-light-blue: rgba(33,139,190,0.8);
+@channel-very-light-blue: rgba(33,139,190,0.1);
+
+@myc-green: #1ab172;
+@myc-yellow: #f3a636;
+@myc-red: #e6644f;
+
+@myc-blue: #56dfee;
+@myc-blue-darker: #23ACBB;
+@myc-aqua: #50e3c2;
+@myc-pink: #ff4485;
+
+@optum-yellow: #f9da78;
+@optum-orange: #fabb78;
+@optum-orange-darker: #f49588;
+
+@myc-blue-darker-lighter: rgba(35,172,187,0.8);
+
+.card-shadows() {
+  box-shadow: 0 1px 5px 1px rgba(0,0,0,.2);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0 2px 8px 2px rgba(0,0,0,.35);
+  }
+}
+
+.card-shadows-white() {
+  box-shadow: 0 1px 5px 1px rgba(255,255,255,.2);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0 2px 8px 2px rgba(255,255,255,.35);
+  }
+}
+
+.basic-blue-button() {
+  height: 36px;
+  min-width: 140px;
+
+  background: @channel-blue;
+  border: 1px solid @channel-blue;
+  border-radius: 18px;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.2s ease-in-out;
+
+  .button-text {
+    padding: 0 20px;
+    color: white;
+    font-size: 14px;
+    font-family: 'Open Sans';
+  }
+  &:hover {
+    background: @channel-light-blue;
+  }
+
+  &.ghost {
+    background: white;
+
+    .button-text {
+      color: @channel-blue;
+    }
+    &:hover {
+      background: @channel-very-light-blue;
+    }
+  }
+
+  &.disabled {
+    background: #666;
+    border: 1px solid #666;
+    cursor: no-drop;
+
+    &:hover {
+      background: #666;
+    }
+  }
+
+  &.text {
+    height: auto;
+    min-width: 0px;
+    display: inline-block;
+    background: transparent;
+    border: none;
+
+    .button-text {
+      display: inline-block;
+      padding: 0;
+      color: black;
+      text-decoration: underline;
+    }
+  }
+}
+
+.top-bar() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.channel-name-top-bar() {
+  color: @channel-blue;
+  font-size: 15px;
+  font-family: 'Open Sans';
+}
+
+.video-title-top-bar() {
+  color: white;
+  font-size: 17px;
+  font-family: 'Open Sans';
+}

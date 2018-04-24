@@ -1,0 +1,119 @@
+@import "colors";
+
+.contact-suggestion-container {
+  width: 100%;
+
+  .input {
+    position: relative;
+  }
+
+  .added-users {
+    max-width: 100%;
+
+    .invited-users {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      max-height: 300px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      padding-right: 15px;
+
+      .invited-user-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: @channel-blue;
+        border: 1px solid @channel-blue;
+        border-radius: 18px;
+        width: 250px;
+        height: 36px;
+        overflow: hidden;
+        margin-right: 8px;
+        margin-top: 15px;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+
+        &:hover {
+          .user-text {
+            display: none;
+          }
+
+          .delete-user {
+            min-width: 100%;
+            min-height: 100%;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+          }
+
+          transition: opacity .25s ease-in-out;
+          background-color: @myc-blue-darker-lighter;
+        }
+
+        .user-text {
+          color: #fff;
+          font-size: 14px;
+          font-family: "Open Sans";
+        }
+
+        .delete-user {
+          height: 0px;
+          width: 0px;
+          opacity: 0;
+          background: url("/static/img/close-white.png") no-repeat center center;
+          background-size: auto 70%;
+        }
+      }
+    }
+  }
+
+  .user-search-matches {
+    position: absolute;
+    top: 90px;
+    left: 5px;
+
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    color: #000;
+    width: 300px;
+    font-size: 13px;
+    font-family: 'Open Sans';
+    font-weight: 300;
+
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    .user-search-no-match-row, .user-search-match-row {
+      padding: 3px 0px 3px 5px;
+    }
+
+    .user-search-no-match-row {
+      background-color: #ccc;
+      color: red;
+    }
+
+    .user-search-match-row {
+
+      &:nth-child(odd) {
+        background-color: #ccc;
+      }
+
+      &:nth-child(even) {
+        background-color: #eee;
+      }
+
+      &:hover {
+        background-color: @channel-blue;
+        color: white;
+      }
+    }
+  }
+}

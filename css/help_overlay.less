@@ -1,0 +1,115 @@
+
+@import "colors";
+
+.help-overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+
+  background-color: rgba(0,0,0,0.8);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .inner {
+    max-width: 450px;
+    width: 450px;
+    margin: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .top-title {
+      margin-bottom: 10px;
+
+      color: white;
+      font-family: 'Open Sans';
+      font-size: 30px;
+      font-weight: 100;
+    }
+    .top-sub-title {
+      margin-bottom: 20px;
+
+      color: white;
+      font-family: 'Open Sans';
+      font-size: 14px;
+      font-weight: 200;
+    }
+
+    .ftu-item {
+      margin-bottom: 15px;
+
+      align-self: stretch;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+
+      .left {
+        margin: 10px 35px 0 0;
+        .icon {
+          width: 35px;
+          height: 35px;
+
+          background: transparent no-repeat center center;
+          background-size: contain;
+
+          &.home {
+            background-image: url('/static/img/home-white.png');
+          }
+          &.channel {
+            background-image: url('/static/img/squares-white.png');
+          }
+          &.chat {
+            background-image: url('/static/img/chat-white.png');
+          }
+          &.emoji {
+            background-image: url('/static/img/smile-happy-white.png');
+          }
+          &.power {
+            background-image: url('/static/img/power-white.png');
+          }
+          &.people {
+            background-image: url('/static/img/profile-white.png');
+          }
+          &.pulse {
+            background-image: url('/static/img/pulse-white.png');
+          }
+        }
+      }
+      .right {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        .title {
+          margin-bottom: 9px;
+
+          color: white;
+          font-size: 23px;
+          font-family: 'Open Sans';
+          font-weight: 100;
+        }
+        .text {
+          color: white;
+          font-size: 14px;
+          line-height: 20px;
+          font-family: 'Open Sans';
+          font-weight: 200;
+        }
+      }
+    }
+
+    .button {
+      margin-top: 10px;
+      .basic-blue-button;
+    }
+  }
+}

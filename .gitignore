@@ -1,0 +1,7 @@
+xcuserdata
+node_modules
+.DS_Store
+config*.json
+project.xcworkspace
+static/css/*.css
+coverage

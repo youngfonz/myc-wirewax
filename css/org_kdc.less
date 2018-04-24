@@ -1,0 +1,82 @@
+
+@import "colors";
+
+.org-kdc-demo {
+  .brand-icon {
+    background-image: url('/static/img/kdc/logo-notext-white.png') !important;
+  }
+  .channel-menu-container .left .header .brand-icon {
+    background-image: url('/static/img/kdc/logo-notext-black.png') !important;
+  }
+  .splash-container {
+    .splash-video-container {
+      .cover {
+        background-color: rgba(0,0,0,0.4);
+      }
+    }
+    .sidebar-container {
+
+      /**** COLORS ****/
+      &.welcome-container {
+        background: #d72619;
+      }
+      &.login-container {
+        background: #3296cc;
+      }
+      &.login-confirm-container {
+        background: #777f7f;
+      }
+      &.onboarding-container {
+        background: #3296cc;
+      }
+
+      &.welcome-container {
+        .logo {
+          width: 256px;
+          height: 128px;
+          background-image: url('/static/img/kdc/logo-white.png')
+        }
+        .login-button {
+          color: white;
+          border: 1px solid white;
+          border-image: none;
+        }
+      }
+    }
+  }
+
+  .home-container {
+    .body-container .sidebar-container {
+      .header {
+        background: #3296cc;
+
+        .icon {
+          width: 120px;
+          height: 50px;
+          background: url("/static/img/kdc/logo-notext-white.png") no-repeat center center;
+          background-size: contain;
+        }
+      }
+      .footer {
+        background: #3296cc;
+      }
+    }
+    .right-menu {
+      .header, .footer {
+        background:  #3296cc;
+      }
+    }
+  }
+  .channel-list-container .channel-list .channel-card .detail .watch-now {
+    background: #3296cc;
+  }
+
+  .channel-video-page-container {
+    background: #3296cc;
+    background-size: cover;
+
+    .channel-overlay .top-bar .brand-icon {
+      width: 100px;
+    }
+  }
+}

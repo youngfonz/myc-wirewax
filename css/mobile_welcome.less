@@ -1,0 +1,138 @@
+
+.mobile-welcome-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  .header {
+    min-height: 40px;
+    padding: 5px;
+    flex: 1;
+    align-self: stretch;
+    background: white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-contents: center;
+
+    .brand-icon {
+      flex: 1;
+      align-self: stretch;
+      background: transparent center center no-repeat;
+      background-size: contain;
+    }
+  }
+  .body {
+    padding: 10px 15px 0;
+    flex: 11;
+    align-self: stretch;
+    background: linear-gradient(to bottom,#222,#353535,#222);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    .header-text {
+      color: white;
+      font-size: 19px;
+      font-family: 'Open Sans';
+      font-weight: 600;
+      text-align: center;
+    }
+    .body-text {
+      padding-top: 10px;
+
+      color: white;
+      font-size: 18px;
+      font-family: 'Open Sans';
+      line-height: 25px;
+      text-align: center;
+    }
+    .device-image {
+      flex: 1;
+      width: 80%;
+      min-width: 200px;
+      margin-top: 15px;
+
+      background: transparent url('/static/img/mobile-welcome-device.png') top center no-repeat;
+      background-size: 100%;
+    }
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 50px;
+    right: 0;
+    padding: 10px;
+
+    background: white;
+    border-top: 1px solid #333;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-contents: center;
+
+    .buttons {
+      align-self: stretch;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      .button {
+        flex: 1;
+        height: 46px;
+        display: block;
+        cursor: pointer;
+
+        &.itunes {
+          margin-right: 10px;
+          background: transparent url('/static/img/itunes-badge.svg') no-repeat center right;
+          background-size: contain;
+        }
+        &.google-play {
+          background: transparent url('/static/img/google-play-badge.png') no-repeat center left;
+          background-size: contain;
+        }
+      }
+
+    }
+    .continue {
+      padding-top: 8px;
+      align-self: stretch;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        color: #333;
+        font-size: 18px;
+        font-family: 'Open Sans';
+        text-decoration: none;
+
+        cursor: pointer;
+        .link-color {
+          color: #218bbe;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

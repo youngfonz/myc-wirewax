@@ -1,0 +1,39 @@
+
+@import "colors";
+
+.channel-container {
+  &.content-frame-container .frame-header-container .frame-header-title {
+    color: @channel-blue;
+  }
+
+  .section {
+    align-self: stretch;
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      .title {
+        color: black;
+        font-size: 16px;
+        font-family: 'Open Sans';
+      }
+      .subtitle {
+        margin-left: 11px;
+        color: #666;
+        font-size: 14px;
+        font-family: 'Open Sans';
+      }
+    }
+    .video-list .detail .channel-name {
+    	display: none;
+    }
+  }
+}

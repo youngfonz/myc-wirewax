@@ -1,0 +1,6 @@
+{
+  "ignore": ["assets/*", "src/*", "static/*"],
+  "execMap": {
+    "js": "node --harmony"
+  }
+}

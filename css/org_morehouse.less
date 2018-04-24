@@ -1,0 +1,45 @@
+@import "colors";
+
+.org-morehouse {
+  .brand-icon {
+    background-image: url('/static/img/morehouse/logo-red.png') !important;
+  }
+
+  .splash-container .sidebar-container {
+
+    &.welcome-container {
+      .logo {
+        width: 256px;
+        height: 128px;
+        background-image: url('/static/img/morehouse/logo-mctv-white.png');
+      }
+      .brand {
+        letter-spacing: inherit;
+      }
+      .login-button {
+        color: white;
+        border: 1px solid white;
+      }
+      .footer {
+        display: none;
+      }
+    }
+
+    /**** COLORS ****/
+    &.welcome-container {
+      background: #790024;
+    }
+    &.login-container {
+      background: #383737;
+    }
+    &.login-confirm-container {
+      background: #790024;
+    }
+    &.onboarding-container {
+      background: #383737;
+    }
+  }
+  .channel-video-page-container {
+      background-image: linear-gradient(#000000,#862633);
+  }
+}

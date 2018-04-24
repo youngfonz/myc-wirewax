@@ -1,0 +1,75 @@
+
+@import "colors";
+
+.org-fandm-demo {
+  .brand-icon {
+    background-image: url('/static/img/fandm/logo-blue.png') !important;
+  }
+  .splash-container {
+    .splash-video-container {
+      .cover {
+        background-color: rgba(0,0,0,0.4);
+      }
+    }
+    .sidebar-container {
+
+      /**** COLORS ****/
+      &.welcome-container {
+        background: #003b70;
+      }
+      &.login-container {
+        background: #00c0f2;
+      }
+      &.login-confirm-container {
+        background: #91c6df;
+      }
+      &.onboarding-container {
+        background: #189dc0;
+      }
+
+      &.welcome-container {
+        .logo {
+          width: 256px;
+          height: 128px;
+          background-image: url('/static/img/fandm/logo-white.png')
+        }
+        .login-button {
+          color: white;
+          border: 1px solid white;
+          border-image: none;
+        }
+      }
+    }
+  }
+
+  .home-container {
+    .body-container .sidebar-container {
+      .header {
+        background: #4873a2;
+
+        .icon {
+          width: 120px;
+          height: 50px;
+          background: url("/static/img/fandm/logo-white.png") no-repeat center center;
+          background-size: contain;
+        }
+      }
+      .footer {
+        background: #4873a2;
+      }
+    }
+    .right-menu {
+      .header, .footer {
+        background:  #4873a2;
+      }
+    }
+  }
+  .channel-list-container .channel-list .channel-card .detail .watch-now {
+    background: #4873a2;
+  }
+
+  .channel-video-page-container {
+    background: #4873a2;
+    background-size: cover;
+  }
+}

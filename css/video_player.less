@@ -1,0 +1,129 @@
+
+// May be nested in .video-presentation, or not
+.video-player-container {
+  flex: 1 1 auto;
+  align-self: stretch;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .video-container {
+    flex: 1;
+    align-self: stretch;
+
+    position: relative;
+
+    .media-element-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      text-align: center;
+      overflow: hidden;
+
+      video {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .hlsjs-video-container,
+    .html5-video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      video {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .cover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: transparent;
+    }
+    .paused-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .big-play-button {
+        width: 100px;
+        height: 100px;
+
+        background: rgba(0,0,0,0.5);
+        border-radius: 50%;
+        border: 3px solid white;
+        cursor: pointer;
+
+        position: relative;
+
+        .big-play-button-inner {
+          position: absolute;
+          top: 20px;
+          left: 26px;
+          width: 60px;
+          height: 60px;
+
+          background: transparent url('/static/img/play-white.png') no-repeat center center;
+          background-size: contain;
+        }
+
+        &:hover {
+          background: rgba(0,0,0,0.4);
+          border: 3px solid #ccc;
+
+          .big-play-button-inner {
+            background-image: url('/static/img/play-grey.png');
+          }
+        }
+      }
+    }
+    .loading-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.iphone .video-player-container {
+  .video-container {
+    .loading-container {
+      display: none !important;
+    }
+    .paused-container {
+      display: none !important;
+    }
+    .cover {
+      display: none !important;
+    }
+  }
+}

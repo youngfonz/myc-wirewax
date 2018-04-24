@@ -1,0 +1,153 @@
+
+.emoji-spacer {
+  width: 122px;
+  flex-shrink: 0;
+}
+
+.emoji-buttons {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  padding: 3px 6px;
+
+  background: rgba(0,0,0,0.3);
+  border: 1px solid #333;
+  border-radius: 15px;
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    border: 0.5px solid #333;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    width: 34px;
+    height: 34px;
+    margin-right: 3px;
+
+    background: transparent no-repeat center center;
+    background-size: 24px;
+    cursor: pointer;
+
+    &.love {
+      background-image: url('/static/img/smile-happy-white.png');
+    }
+    &.neutral {
+      background-image: url('/static/img/smile-neutral-white.png');
+    }
+    &.hate {
+      margin-right: 0;
+      background-image: url('/static/img/smile-sad-white.png');
+    }
+    &:hover {
+      &.love {
+        background-image: url('/static/img/smile-happy-green.png');
+      }
+      &.neutral {
+        background-image: url('/static/img/smile-neutral-yellow.png');
+      }
+      &.hate {
+        background-image: url('/static/img/smile-sad-red.png');
+      }
+    }
+  }
+}
+
+.emoji-bubbles {
+  position: absolute;
+  bottom: 55px;
+  right: 20px;
+
+  .emoji {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+
+    opacity: 0;
+    background: transparent no-repeat center center;
+    background-size: contain;
+
+    animation: emojifloat ease-in-out 0.5s;
+
+    &.love {
+      background-image: url('/static/img/smile-happy-green.png');
+    }
+    &.neutral {
+      background-image: url('/static/img/smile-neutral-yellow.png');
+    }
+    &.hate {
+      background-image: url('/static/img/smile-sad-red.png');
+    }
+  }
+}
+
+.activity-prompt {
+  padding: 17px 8px 17px 30px;
+
+  color: white;
+  font-size: 15px;
+  font-family: 'Open Sans';
+
+  border-radius: 6px;
+  opacity: 1;
+  transition: opacity 1s;
+
+  .hide-button {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: -12px 0 12px 12px;
+
+    background: transparent url('/static/img/close-white.png') no-repeat center center;
+    background-size: contain;
+
+    cursor: pointer;
+  }
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.emoji-prompt {
+  position: absolute;
+  bottom: 51px;
+  right: 19px;
+
+  background-color: #5890dc;
+  border: 1px solid #275ba4;
+}
+
+.chat-prompt {
+  position: absolute;
+  top: 52px;
+  right: 13px;
+
+  background-color: #69b455;
+  border: 1px solid #4d7321;
+
+  .hide-button {
+    margin-left: 48px;
+  }
+}
+
+@keyframes emojifloat {
+  0% {
+    bottom: 0px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 30px;
+    opacity: 0;
+  }
+}

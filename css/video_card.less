@@ -1,0 +1,90 @@
+@import "colors";
+
+.video-card {
+  width: 250px;
+  margin: 0 16px 16px 0;
+
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  .card-shadows;
+
+  .image {
+    height: 128px;
+    align-self: stretch;
+
+    background: black no-repeat center center;
+    border-radius: 3px 3px 0 0;
+
+    background-size: cover;
+
+  }
+  .below-image {
+    flex: 1;
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 121px;
+
+    .channel-name {
+      margin: 13px 10px 0;
+      color: @channel-blue;
+      font-size: 12px;
+      font-family: 'Open Sans';
+      font-weight: 200;
+    }
+    .video-name {
+      max-height: 40px;
+      margin: 8px 12px 0;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      color: black;
+      font-size: 14px;
+      font-family: 'Open Sans';
+      font-weight: 400;
+    }
+    .stats {
+      margin: 15px 14px 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .stat {
+        margin-right: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .icon {
+          margin-right: 5px;
+          width: 20px;
+          height: 20px;
+          background: transparent no-repeat center center;
+          background-size: contain;
+
+          &.views {
+            background-image: url('/static/img/view-grey.png');
+          }
+          &.messages {
+            background-image: url('/static/img/chat-grey.png');
+          }
+        }
+        .text {
+          color: #666;
+          font-size: 12px;
+          font-family: 'Open Sans';
+        }
+      }
+    }
+  }
+}

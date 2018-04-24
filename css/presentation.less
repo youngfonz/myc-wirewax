@@ -1,0 +1,106 @@
+.presentation-container {
+  align-self: stretch;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &.full {
+    width: 0px;
+    height: 0px;
+  }
+  &.one-quarter {
+  }
+  &.one-half {
+  }
+  img {
+    max-height: 100vh;
+  }
+
+  .pdf-container {
+    flex: 1;
+    align-self: stretch;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    canvas {
+      background-color: black;
+    }
+
+    .pdf-loading-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .page-controls {
+    position: absolute;
+    bottom: 64px;
+    left: 0px;
+    right: 0px;
+    height: 52px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .inner-container {
+      width: 190px;
+      height: 52px;
+
+      background: rgba(0,0,0,0.5);
+      border-radius: 5px;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .left, .right {
+        align-self: stretch;
+        width: 46px;
+
+        background: transparent url('/static/img/next-white.png') no-repeat center center;
+        background-size: 22px 22px;
+        cursor: pointer;
+      }
+      .left {
+        transform: scaleX(-1);
+      }
+      .number {
+        flex: 1;
+        align-self: stretch;
+
+        border-left: 1px solid rgba(255,255,255,0.2);
+        border-right: 1px solid rgba(255,255,255,0.2);
+
+        user-select: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div {
+          color: white;
+          font-size: 16px;
+          font-family: 'Open Sans';
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@import "colors";
+@import "flex_table";
+
+.user-admin {
+
+  .admin-user-list {
+    .flex-table;
+    .flex-table-header-row;
+
+    margin-right: 15px;
+    margin-left: 15px;
+
+    .top {
+      .admin-toggle {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .toggle-button {
+          .basic-blue-button;
+          height: 25px;
+        }
+      }
+    }
+
+    .admin-user-row {
+      .flex-table-content-row;
+
+      &.title-row {
+        .email {
+          margin-left: 25px;
+          width: 225px;
+        }
+      }
+
+      .number {
+        width: 50px;
+        margin-right: 10px;
+      }
+
+      .image {
+        width: 50px;
+        margin-right: 10px;
+      }
+
+      .edit, .delete {
+        width: 75px;
+        text-align: center;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .edit {
+        &:hover {
+          text-decoration: underline;
+          color: #333;
+        }
+      }
+
+      .delete {
+        height: 20px;
+        text-align: center;
+
+        .icon {
+          height: 100%;
+          width: 20px;
+          margin-left: auto;
+          margin-right: auto;
+
+          background: url("/static/img/close-yellow.png") no-repeat center center;
+          background-size: contain;
+
+          &:hover {
+            background: url("/static/img/close-white.png") no-repeat center center;
+            background-color: red;
+            background-size: contain;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .email {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        width: 250px;
+
+        .user-admin-icon-container {
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+
+          .icon-show {
+            height: 100%;
+            background: url("/static/img/lock-grey.png") no-repeat center center;
+            background-size: contain;
+          }
+        }
+
+      }
+
+      .name {
+        display: flex;
+        flex: 1;
+        align-self: stretch;
+        align-items: center;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

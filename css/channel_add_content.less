@@ -1,0 +1,124 @@
+
+@import "colors";
+
+.channel-add-container {
+  &.content-frame-container .frame-header-container .frame-header-title {
+    color: @channel-blue;
+  }
+
+  .static-sized-css-fix {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.admin-home {
+    .title {
+      margin-top: 75px;
+      margin-bottom: 15px;
+      flex: 0 1 auto;
+    }
+  }
+
+  .title {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title-text {
+      color: black;
+      font-size: 36px;
+      font-family: 'Open Sans';
+      font-weight: 100;
+      text-align: center;
+    }
+  }
+  .option-list {
+    flex: 1;
+    align-self: stretch;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    &.big {
+      .option {
+        .icon {
+          width: 256px;
+          height: 136px;
+        }
+      }
+    }
+
+    .option {
+      width: 250px;
+      height: 190px;
+      padding: 35px 0;
+      margin: 10px;
+      flex-shrink: 0;
+
+      background: white;
+      border-radius: 3px;
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      .card-shadows;
+
+      .icon {
+        width: 128px;
+        height: 56px;
+
+        background: transparent no-repeat center center;
+        background-size: contain;
+
+        &.video {
+          background-image: url('/static/img/video-blue.png');
+        }
+        &.conference {
+          background-image: url('/static/img/conference-blue.png');
+        }
+        &.add-content {
+          background-image: url('/static/img/upload-blue.png');
+        }
+        &.channel-video {
+          background-image: url('/static/img/video-blue.png');
+        }
+        &.users {
+          background-image: url('/static/img/people-blue.png');
+        }
+        &.video-reply {
+          background-image: url('/static/img/video-reply-blue.png');
+        }
+        &.channel {
+          background-image: url('/static/img/squares-blue.png');
+        }
+        &.private-channel {
+          background-image: url('/static/img/lock-blue.png');
+        }
+      }
+
+      .text {
+        color: black;
+        font-size: 22px;
+        font-family: 'Open Sans';
+      }
+      .button {
+        .basic-blue-button;
+      }
+    }
+  }
+}

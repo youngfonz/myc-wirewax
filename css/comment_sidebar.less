@@ -1,0 +1,562 @@
+
+@import "colors";
+
+.channel-video-page-container .channel-sidebar-container {
+  .comment-container {
+    flex: 1;
+    align-self: stretch;
+
+    border-left: 1px solid black;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .header {
+      height: 55px;
+      align-self: stretch;
+
+      border-bottom: 1px solid #ddd;
+
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+
+      .chat-type {
+        flex: 1;
+        align-self: stretch;
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .text-icon {
+          flex: 1;
+          align-self: stretch;
+
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          .icon {
+            margin-right: 11px;
+            width: 22px;
+            height: 22px;
+            background: transparent no-repeat center center;
+            background-size: contain;
+          }
+          .text {
+            color: #222;
+            font-size: 17px;
+            font-family: 'Open Sans';
+            text-transform: capitalize;
+          }
+        }
+        .line {
+          margin-bottom: -1px;
+          height: 3px;
+          width: 75%;
+          background: transparent;
+        }
+
+        &.active {
+          .line {
+            background-color: @channel-blue;
+          }
+          &.all .icon {
+            background-image: url('/static/img/chat-yellow.png');
+          }
+          &.liked .icon {
+            background-image: url('/static/img/bolt-yellow.png');
+          }
+          &.promoted .icon {
+            background-image: url('/static/img/fire-yellow.png');
+          }
+        }
+        &:hover {
+          background: rgba(0,0,0,0.1);
+        }
+        &.all .icon {
+          background-image: url('/static/img/chat-grey.png');
+        }
+        &.liked .icon {
+          background-image: url('/static/img/bolt-grey.png');
+        }
+        &.promoted .icon {
+          background-image: url('/static/img/fire-grey.png');
+        }
+      }
+    }
+    .pinned {
+      align-self: stretch;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+
+      background-size: cover;
+
+      .date-line {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .line {
+          flex: 1;
+          height: 1px;
+          background-color: rgba(0,0,0,0.5);
+        }
+        .date {
+          padding: 0px 14px;
+          color: #444;
+          font-size: 14px;
+          font-family: 'Open Sans';
+        }
+      }
+      .topic {
+        margin-bottom: 15px;
+        color: black;
+        font-size: 13px;
+        font-family: 'Open Sans';
+      }
+      .message-text {
+        color: #666;
+        font-size: 15px;
+        line-height: 22px;
+        font-family: 'Open Sans';
+        font-style: italic;
+      }
+    }
+    .middle {
+      flex: 1;
+      align-self: stretch;
+
+      position: relative;
+
+      .comment-list {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 15px 0 5px 0;
+
+        background: white;
+        overflow-y: scroll;
+
+        .message {
+          padding: 0 15px 0 7px;
+
+          position: relative;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          &:hover {
+            background: #f7f7f7;
+          }
+
+          .avatar {
+            width: 40px;
+            height: 40px;
+            margin: 8px 0 5px 5px;
+          }
+
+          .middle-chat-message {
+            margin-left: 10px;
+            width: 288px;
+
+            display: flex;
+            flex-direction: column;
+
+            .user-time {
+              margin-top: 10px;
+              margin-bottom: 5px;
+
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
+
+              .user {
+                color: #222;
+                font-size: 14px;
+                font-family: 'Open Sans';
+                font-weight: 600;
+              }
+              .time {
+                padding-left: 10px;
+
+                color: #aaa;
+                font-size: 12px;
+                font-family: 'Open Sans';
+                font-weight: 100;
+              }
+            }
+            .text {
+              margin-bottom: 10px;
+              color: #666;
+              font-size: 14px;
+              font-family: 'Open Sans';
+              line-height: 17px;
+              vertical-align: top;
+
+              span.sentiment {
+                margin-left: 5px;
+                vertical-align: top;
+
+                span.icon {
+                  display: inline-block;
+                  margin-left: 2px;
+                  margin-right: 3px;
+                  margin-top: -1px;
+                  width: 16px;
+                  height: 16px;
+                  background: transparent no-repeat center center;
+                  background-size: contain;
+                  vertical-align: top;
+                  border-radius: 8px;
+
+                  &.happy {
+                    background-color: green;
+                    background-image: url('/static/img/smile-happy-black.png')
+                  }
+                  &.sad {
+                    background-color: red;
+                    background-image: url('/static/img/smile-sad-black.png')
+                  }
+                  &.neutral {
+                    background-color: orange;
+                    background-image: url('/static/img/smile-neutral-black.png')
+                  }
+                }
+              }
+            }
+            .reaction-list {
+              display: flex;
+              flex-direction: row;
+
+              .reaction {
+                height: 20px;
+                padding: 0px 4px;
+                margin: 0 8px 5px 0;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                background-color: #f9f9f9;
+                border: 1px solid #e5e5e5;
+                border-radius: 3px;
+
+                cursor: pointer;
+
+                .icon {
+                  height: 16px;
+                  width: 16px;
+                  background: center center no-repeat;
+                  background-size: contain;
+
+                  &.like {
+                    background-image: url('/static/img/bolt-yellow.png');
+                  }
+                  &.promote {
+                    background-image: url('/static/img/fire-yellow.png');
+                  }
+                }
+                .count {
+                  padding-left: 2px;
+                  color: #999;
+                  font-size: 12px;
+                  font-family: 'Open Sans';
+                }
+
+                &.active {
+                  background-color: #f4fafe;
+                  border: 1px solid #badefb;
+
+                  .count {
+                    color: #69bcfc;
+                  }
+                }
+                &:hover {
+                  border: 1px solid #4fb0fc;
+                }
+
+              }
+              .moderate {
+                margin: 0 8px 5px 0;
+                padding: 3px 10px 3px;
+
+                color: white;
+                font-size: 14px;
+                font-family: 'Open Sans';
+
+                background-color: #5fa1ea;
+                border-radius: 3px;
+
+                cursor: pointer;
+              }
+            }
+          }
+
+          .buttons {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 12px;
+
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: flex-start;
+
+            .button {
+              width: 24px;
+              height: 24px;
+              margin: 10px 2px 0;
+
+              background: white;
+              box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+              border-radius: 3px;
+              cursor: pointer;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              opacity: 0;
+              //transition: opacity 0.1s;
+              flex-shrink: 0;
+
+              &.like {
+                opacity: 1;
+              }
+
+              .icon {
+                width: 18px;
+                height: 18px;
+                background: transparent no-repeat center center;
+                background-size: contain;
+              }
+              &.like .icon {
+                background-image: url('/static/img/bolt-grey.png');
+              }
+              &.promote .icon {
+                background-image: url('/static/img/fire-grey.png');
+              }
+              &.delete .icon {
+                background-image: url('/static/img/trash-grey.png');
+              }
+              &.pin .icon {
+                background-image: url('/static/img/pin-grey.png');
+              }
+              &.pin.unpin .icon {
+                transform: scaleY(-1);
+              }
+              &:hover.like .icon {
+                background-image: url('/static/img/bolt-yellow.png');
+              }
+              &:hover.promote .icon {
+                background-image: url('/static/img/fire-yellow.png');
+              }
+              &:hover.delete .icon {
+                background-image: url('/static/img/trash-yellow.png');
+              }
+              &:hover.pin .icon {
+                background-image: url('/static/img/pin-yellow.png');
+              }
+            }
+            .moderate {
+              display: none;
+            }
+            .reject {
+              display: none;
+            }
+          }
+
+          &:hover .buttons {
+            .button.promote,
+            .button.delete,
+            .button.pin {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .input-container {
+      padding: 10px;
+      align-self: stretch;
+      background-color: #f0f0f0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .avatar-input {
+        padding: 6px;
+        align-self: stretch;
+
+        background-color: #f9f9f9;
+        border-radius: 4px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .avatar {
+          display: none !important;
+        }
+
+        form {
+          flex: 1;
+
+          display: flex;
+          flex-direction: row;
+        }
+        input {
+          margin: 9px 0px 8px 9px;
+          flex: 1;
+          background: none;
+          border: none;
+          outline: none;
+
+          color: #6f6f6f;
+          font-size: 14px;
+          font-family: 'Open Sans';
+        }
+
+      }
+      .button-container {
+        display: none !important;
+        align-self: stretch;
+        margin-top: 13px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .send-button {
+          padding: 11px 27px 10px;
+
+          color: white;
+          font-size: 12px;
+          font-family: 'Open Sans';
+
+          background-color: #4052b2;
+          border-radius: 18px;
+          cursor: pointer;
+
+          &:hover {
+            color: #444;
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
+
+  &.admin.open {
+    width: 700px;
+
+    .comment-container .middle .comment-list .message {
+
+      .middle-chat-message {
+        flex: 1;
+
+        .reaction-list {
+          .moderate {
+            display: none;
+          }
+        }
+      }
+      .buttons {
+        position: static;
+        align-self: stretch;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .button {
+          width: 30px;
+          height: 30px;
+          margin: 0 5px 0;
+          opacity: 1;
+          background-color: #5fa1ea;
+          border-radius: 3px;
+          box-shadow: none;
+
+          .icon {
+            width: 20px;
+            height: 20px;
+          }
+          &.like .icon {
+            background-image: url('/static/img/bolt-white.png');
+          }
+          &.promote .icon {
+            background-image: url('/static/img/fire-white.png');
+          }
+          &.delete .icon {
+            background-image: url('/static/img/trash-white.png');
+          }
+          &.pin .icon {
+            background-image: url('/static/img/pin-white.png');
+          }
+
+          &.like {
+            order: 1;
+          }
+          &.promote {
+            order: 2;
+          }
+          &.delete {
+            order: 4;
+          }
+          &.pin {
+            order: 3;
+          }
+        }
+
+        .moderate {
+          display: block;
+          margin: 0 8px 5px 0;
+          padding: 3px 10px 3px;
+
+          color: white;
+          font-size: 14px;
+          font-family: 'Open Sans';
+
+          background-color: #5fa1ea;
+          border-radius: 3px;
+
+          cursor: pointer;
+        }
+        .reject {
+          display: block;
+          margin: 0 8px 5px 0;
+          padding: 3px 10px 3px;
+
+          color: white;
+          font-size: 14px;
+          font-family: 'Open Sans';
+
+          background-color: red;
+          border-radius: 3px;
+
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

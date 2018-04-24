@@ -1,0 +1,82 @@
+
+@import "colors";
+
+.org-blackrock-demo {
+  .brand-icon {
+    background-image: url('/static/img/blackrock/logo-white.png') !important;
+  }
+  .channel-menu-container .left .header .brand-icon {
+    background-image: url('/static/img/blackrock/logo-black.png') !important;
+  }
+  .splash-container {
+    .splash-video-container {
+      .cover {
+        background-color: rgba(0,0,0,0.4);
+      }
+    }
+    .sidebar-container {
+
+      /**** COLORS ****/
+      &.welcome-container {
+        background: #107f67;
+      }
+      &.login-container {
+        background: #1aa5d6;
+      }
+      &.login-confirm-container {
+        background: #77ae4c;
+      }
+      &.onboarding-container {
+        background: #0a5890;
+      }
+
+      &.welcome-container {
+        .logo {
+          width: 256px;
+          height: 128px;
+          background-image: url('/static/img/blackrock/logo-white.png')
+        }
+        .login-button {
+          color: white;
+          border: 1px solid white;
+          border-image: none;
+        }
+      }
+    }
+  }
+
+  .home-container {
+    .body-container .sidebar-container {
+      .header {
+        background: #0a5890;
+
+        .icon {
+          width: 120px;
+          height: 50px;
+          background: url("/static/img/blackrock/logo-white.png") no-repeat center center;
+          background-size: contain;
+        }
+      }
+      .footer {
+        background: #0a5890;
+      }
+    }
+    .right-menu {
+      .header, .footer {
+        background:  #0a5890;
+      }
+    }
+  }
+  .channel-list-container .channel-list .channel-card .detail .watch-now {
+    background: #0a5890;
+  }
+
+  .channel-video-page-container {
+    background: #0a5890;
+    background-size: cover;
+
+    .channel-overlay .top-bar .brand-icon {
+      width: 100px;
+    }
+  }
+}

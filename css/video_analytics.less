@@ -1,0 +1,174 @@
+
+.video-analytics-container {
+  .analytics-title {
+    margin: 20px 10px 0;
+    color: white;
+    font-size: 18px;
+    font-family: 'Open Sans';
+  }
+
+  .statistics-list {
+    align-self: stretch;
+    margin: 13px 10px 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    .item {
+      padding: 0 30px 0 25px;
+      margin-bottom: 38px;
+
+      border-right: 1px solid #ddd;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .value {
+        color: white;
+        font-size: 35px;
+        font-family: 'Open Sans';
+        font-weight: 600;
+      }
+      .text {
+        color: white;
+        font-size: 15px;
+        font-family: 'Open Sans';
+        font-weight: 100;
+      }
+    }
+    div:last-of-type {
+      border-right: none;
+    }
+  }
+  .sep {
+    align-self: stretch;
+    border-bottom: 1px dashed #888;
+  }
+  .graph-title {
+    margin: 30px 10px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Open Sans';
+  }
+  .graph-body {
+    flex: 1;
+    align-self: stretch;
+
+    position: relative;
+
+    .video-emoji-graph-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      color: white;
+      font-family: 'Open Sans';
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        .tick line {
+          stroke-dasharray: 5,5;
+          stroke: #999;
+        }
+        .nv-x text {
+          stroke: white;
+          fill: white;
+          font-family: 'Open Sans';
+          font-weight: 100;
+        }
+        .nv-axisMaxMin.nv-axisMaxMin-x.nv-axisMin-x text {
+          text-anchor: start !important;
+        }
+        .nv-axisMaxMin.nv-axisMaxMin-x.nv-axisMax-x text {
+          text-anchor: end !important;
+        }
+      }
+    }
+  }
+}
+.nvtooltip {
+  padding: 0;
+  background: none;
+  border: none;
+
+  .video-emoji-graph-tooltip {
+    width: 190px;
+
+    background: white;
+    border: none;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .header {
+      padding: 4px 0 2px;
+      color: white;
+      font-size: 12px;
+      font-family: 'Open Sans';
+      text-align: center;
+    }
+    .time {
+      padding: 4px 0 2px;
+      border-bottom: 1px solid #eee;
+
+      color: black;
+      font-size: 12px;
+      font-family: 'Open Sans';
+      text-align: center;
+    }
+    .sentiment {
+      padding: 4px 0 6px;
+
+      color: black;
+      font-size: 12px;
+      font-family: 'Open Sans';
+      text-align: center;
+
+      .icon {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-left: 5px;
+        margin-bottom: -2px;
+
+        background: transparent no-repeat center center;
+        background-size: contain;
+        border-radius: 50%;
+      }
+    }
+    &.positive {
+      .header {
+        background-color: green;
+      }
+      .icon {
+        background-color: green;
+        background-image: url('/static/img/smile-happy-black.png');
+      }
+    }
+    &.neutral {
+      .header {
+        background-color: orange;
+      }
+      .icon {
+        background-color: orange;
+        background-image: url('/static/img/smile-neutral-black.png');
+      }
+    }
+    &.negative {
+      .header {
+        background-color: red;
+      }
+      .icon {
+        background-color: red;
+        background-image: url('/static/img/smile-sad-black.png');
+      }
+    }
+  }
+}

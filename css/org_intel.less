@@ -1,0 +1,95 @@
+
+@import "colors";
+
+.org-intel-demo {
+  .brand-icon {
+    background-image: url('/static/img/intel/intel-logo-blue.png') !important;
+  }
+  .splash-container {
+    .splash-video-container {
+      .cover {
+        background-color: rgba(0,0,0,0.6);
+      }
+    }
+    .sidebar-container {
+
+      /**** COLORS ****/
+      &.welcome-container {
+        background: #1273b0;
+      }
+      &.login-container {
+        background: #ffc123;
+      }
+      &.login-confirm-container {
+        background: #ff7513;
+      }
+      &.onboarding-container {
+        background: #002b4a;
+      }
+
+      &.welcome-container {
+        .logo {
+          width: 128px;
+          height: 128px;
+          background-image: url('/static/img/intel/intel-logo-white.png')
+        }
+        .login-button {
+          color: white;
+          border: 1px solid white;
+          border-image: none;
+        }
+      }
+    }
+  }
+
+  .home-container {
+    .body-container .sidebar-container {
+      .header {
+        .icon {
+          width: 120px;
+          height: 50px;
+          background: url("/static/img/intel/intel-logo-white.png") no-repeat center center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+  .channel-list-container .channel-list .channel-card .detail .watch-now {
+    background: #ff7513;
+  }
+
+  .channel-video-page-container {
+    background: radial-gradient(#004a87,#58ace1);
+    background-size: cover;
+    .channel-overlay {
+      .top-bar {
+        .chat-button {
+          background-color: #0d3f96;
+        }
+      }
+      .overlay-channel-title .channel-name {
+        color: @optum-yellow;
+      }
+    }
+    .comment-container .header .chat-type.active {
+      .line {
+        background: #0d3f96;
+      }
+      .icon {
+        background: #0d3f96;
+      }
+    }
+  }
+  .channel-share-container {
+    .share-title {
+      color: @optum-yellow;
+    }
+    .background .share-channel-title .channel-name {
+      color: @optum-yellow;
+    }
+    .send-button {
+      background: linear-gradient(to right,#dd7a39,#ffd193,#dd7a39);
+      background-size: 200%;
+    }
+  }
+}

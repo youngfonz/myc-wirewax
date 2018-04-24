@@ -1,0 +1,249 @@
+
+@import "colors";
+
+.content-frame-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  .frame-body-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #f5f5f5;
+
+    .frame-content-container {
+      min-height: 100vh;
+      margin-bottom: -82px;
+
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+
+      .frame-content-inner-container {
+        flex: 1 0 auto;
+        padding: 82px 32px 82px 40px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 56px;
+        padding-right: 30px;
+
+        background-color: #404040;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+        a {
+          margin-left: 30px;
+          color: white;
+          font-size: 12px;
+          font-family: 'Open Sans';
+          text-decoration: none;
+          outline: none;
+
+          .copy {
+            margin-right: 3px;
+          }
+          .reg {
+            position: relative;
+            top: -0.5em;
+            margin-left: 3px;
+            vertical-align: baseline;
+
+            font-size: 75%;
+            line-height: 0;
+          }
+        }
+      }
+    }
+  }
+  .frame-header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+
+    background: rgba(255,255,255,0.7);
+    border-bottom: 1px solid rgba(230,230,230,0.7);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .frame-header-title {
+      flex: 1;
+      margin-left: 17px;
+
+      color: black;
+      font-size: 21px;
+      font-family: 'Open Sans';
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .user {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .name {
+        margin-right: 10px;
+        color: black;
+        font-size: 14px;
+        font-family: 'Open Sans';
+      }
+      .avatar {
+        width: 24px;
+        height: 24px;
+        margin-right: 15px;
+      }
+    }
+
+    .button-add {
+      position: absolute;
+      top: 45px;
+      right: 52px;
+      width: 56px;
+      height: 56px;
+
+      background: @channel-blue;
+      border-radius: 50%;
+      box-shadow: 0 3px 10px 2px rgba(0,0,0,0.3);
+      cursor: pointer;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .inner {
+        width: 20px;
+        height: 20px;
+        background: url('/static/img/plus-white.png') no-repeat center center;
+        background-size: contain;
+
+        transition: all 0.5s ease;
+      }
+
+      &:hover .inner {
+        width: 28px;
+        height: 28px;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .home-hero-container {
+    margin-left: -15px;
+    align-self: stretch;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    &.single-hero {
+      margin-left: -55px;
+      margin-top: -26px;
+      margin-right: -47px;
+
+      .hero-card:nth-of-type(2) {
+        display: none;
+      }
+
+      .hero-card {
+        height: 300px;
+        border-radius: 0;
+
+        &:hover {
+          box-shadow: 0 1px 5px 1px rgba(0,0,0,.2);
+        }
+        .inner {
+          padding-bottom: 40px;
+          justify-contents: space-around;
+          align-items: center;
+        }
+      }
+    }
+
+    .hero-card {
+      margin: 0 15px 30px;
+      flex: 1;
+      height: 270px;
+      min-width: 350px;
+
+      background: black no-repeat center center;
+      background-size: cover;
+      border-radius: 3px;
+      overflow: hidden;
+      cursor: pointer;
+
+      position: relative;
+
+      .card-shadows;
+
+      .inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        .headline {
+          color: white;
+          font-size: 28px;
+          font-family: 'Open Sans';
+          font-weight: 100;
+
+          &.live {
+            color: red;
+            font-weight: 400;
+          }
+        }
+        .item-title {
+          color: white;
+          font-size: 14px;
+          font-family: 'Open Sans';
+        }
+      }
+    }
+  }
+
+}

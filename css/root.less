@@ -1,0 +1,198 @@
+
+.root-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-x: hidden;
+
+  .global-menu-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    overflow: hidden;
+    padding-bottom: 10px;
+
+    background: #151515;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    transition: width 0.2s ease-out;
+
+    a {
+      text-decoration: none;
+    }
+
+    .header {
+      align-self: stretch;
+      height: 56px;
+      background: black;
+      flex-shrink: 0;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .brand-icon {
+        width: 40px;
+        height: 40px;
+        margin-top: 8px;
+        margin-left: 5px;
+        align-self: stretch;
+
+        cursor: pointer;
+        background: transparent no-repeat center center;
+        background-size: contain;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        .icon {
+          width: 24px;
+          height: 24px;
+          margin-left: 13px;
+          margin-right: 13px;
+          flex-shrink: 0;
+        }
+
+        .label {
+          color: white;
+          font-size: 16px;
+          font-family: 'Open Sans';
+        }
+      }
+    }
+
+    .item {
+      height: 50px;
+      align-self: stretch;
+      cursor: pointer;
+      flex-shrink: 0;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      .avatar {
+        width: 24px;
+        height: 24px;
+        margin-left: 13px;
+        margin-right: 13px;
+        flex-shrink: 0;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 13px;
+        margin-right: 13px;
+        flex-shrink: 0;
+        background: transparent no-repeat center center;
+        background-size: contain;
+
+        &.home {
+          background-image: url('/static/img/home-grey.png');
+        }
+        &.channel {
+          background-image: url('/static/img/squares-grey.png');
+        }
+        &.help {
+          background-image: url('/static/img/help-grey.png');
+        }
+        &.analytics {
+          background-image: url('/static/img/analytics-grey.png');
+        }
+        &.dashboard {
+          background-image: url('/static/img/dashboard-grey.png');
+        }
+        &.profile {
+          background-image: url('/static/img/user-grey.png');
+        }
+        &.admin {
+          background-image: url('/static/img/settings-grey.png');
+        }
+        &.donate {
+          background-image: url('/static/img/donate-grey.png');
+        }
+      }
+      &.active .icon {
+        &.home {
+          background-image: url('/static/img/home-white.png');
+        }
+        &.channel {
+          background-image: url('/static/img/squares-white.png');
+        }
+        &.help {
+          background-image: url('/static/img/help-white.png');
+        }
+        &.analytics {
+          background-image: url('/static/img/analytics-white.png');
+        }
+        &.dashboard {
+          background-image: url('/static/img/dashboard-white.png');
+        }
+        &.profile {
+          background-image: url('/static/img/user-white.png');
+        }
+        &.admin {
+          background-image: url('/static/img/settings-white.png');
+        }
+      }
+
+      .label {
+        color: white;
+        font-size: 16px;
+        font-family: 'Open Sans';
+      }
+      &:hover {
+        background: rgba(255,255,255,0.2);
+      }
+    }
+    /*
+    &:hover {
+      width: 200px;
+      transition: width 0.5s ease-out;
+    }
+    */
+  }
+  .global-content-container {
+    position: absolute;
+    left: 50px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.myc-page-transition-appear {
+
+  &.myc-page-transition-appear-active {
+    animation: mycTransitionFadeIn .5s ease-in;
+  }
+}
+
+.myc-page-transition-leave {
+
+  &.myc-page-transition-leave-active {
+    transition: opacity .5s;
+    opacity: 0;
+  }
+}
+
+@keyframes mycTransitionFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}

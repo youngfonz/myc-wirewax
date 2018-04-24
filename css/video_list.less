@@ -1,0 +1,52 @@
+
+@import "colors";
+
+.video-list-container {
+  align-self: stretch;
+
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  .tag-list {
+    align-self: stretch;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+
+    .tag {
+      padding: 8px 22px 8px;
+      margin: 0 8px 10px 0;
+
+      color: #555;
+      font-size: 12px;
+      font-family: 'Open Sans';
+      font-weight: 600;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      background: #eee;
+      cursor: pointer;
+
+      &.active {
+        color: white;
+        border: 1px solid @channel-blue;
+        background: @channel-blue;
+      }
+
+      &:hover {
+        background: #d5d5d5;
+        &.active {
+          background: @channel-light-blue;
+        }
+      }
+    }
+  }
+
+  .video-card-list {
+    align-self: stretch;
+    display: flex;
+    flex-flow: row wrap;
+  }
+}

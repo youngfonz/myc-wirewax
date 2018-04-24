@@ -1,0 +1,56 @@
+
+@import 'colors.less';
+
+.channel-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  .video-presentation {
+    flex: 1;
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &.no-video .video-player-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      z-index: -1;
+      overflow: hidden;
+    }
+  }
+
+  .video-hold-card {
+    flex: 1;
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: transparent center center no-repeat;
+    background-size: contain;
+
+    .button {
+      .basic-blue-button();
+    }
+  }
+}

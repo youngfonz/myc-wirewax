@@ -1,0 +1,40 @@
+.top-button {
+  margin-right: 12px;
+  align-self: stretch;
+  padding: 0 10px;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    height: 28px;
+    width: 28px;
+    background: transparent no-repeat center center;
+    background-size: contain;
+  }
+  .count {
+    display: none;
+  }
+
+  &.analytics {
+    .icon {
+      background-image: url('/static/img/pulse-white.png');
+    }
+    &:hover .icon {
+      background-image: url('/static/img/pulse-grey.png');
+    }
+  }
+
+  &.chat {
+    .icon {
+      background-image: url('/static/img/chat-white.png');
+    }
+    &:hover .icon {
+      background-image: url('/static/img/chat-grey.png');
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "aws": {
+    "_comment": "Set aws: false if you have an IAM role setup.",
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "region": "us-west-2"
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=org_title%></title>
+    <link rel="icon" type="image/png" href="<%=fav_icon_path%>/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="<%=fav_icon_path%>/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="<%=fav_icon_path%>/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="<%=fav_icon_path%>/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <link href="/static/js/nvd3/1.8.4/nv.d3.min.css" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 11]>
+      <meta http-equiv="refresh" content="0; url=/unsupported_browser">
+    <![endif]-->
+    <style>
+      html,body {
+        background: black;
+      }
+      .page-load-container.loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+      .page-load-container.loader .arc {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -50px;
+
+        border: 2px solid;
+        border-color: transparent white white white;
+        border-radius: 50%;
+        animation: page-load-single-arc-rotate 1s infinite linear;
+      }
+      @keyframes page-load-single-arc-rotate {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      #cdn-tester {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 1px;
+        z-index: -1000000;
+        overflow: hidden;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body class="<%=org_style%>">
+    <div id='root'>
+      <div class="page-load-container loader">
+        <div class="arc"></div>
+      </div>
+    </div>
+    <div id='cdn-tester'>
+    </div>
+    <script>
+      (function() {
+        var msie_match = window.navigator.userAgent.match(/MSIE ([^;]*)/);
+        if (msie_match && msie_match.length > 1) {
+          var msie_version = parseFloat(msie_match[1]);
+          if (msie_version < 11.0) {
+            document.location.href = "/unsupported_browser";
+          }
+        }
+      })();
+      window.appConfig = <%-app_config_json%>;
+    </script>
+    <script src="/static/js/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/static/js/moment-with-locales-2.10.6.min.js"></script>
+    <script src="/static/js/pusher.js"></script>
+    <script src="/assets/bundle-<%-asset_hash%>.js"></script>
+
+    <script src="/static/js/d3/3.5.2/d3.min.js"></script>
+    <script src="/static/js/nvd3/1.8.4/nv.d3.min.js"></script>
+
+    <script src="/static/js/datamaps/0.5.0/topojson.js"></script>
+    <script src="/static/js/datamaps/0.5.0/datamaps.world.min.js"></script>
+  </body>
+</html>

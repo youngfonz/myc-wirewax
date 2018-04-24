@@ -1,0 +1,202 @@
+@import "colors";
+@import "flex_table";
+
+.header-button {
+  .basic-blue-button;
+  height: 25px;
+}
+
+.channel-admin {
+
+  .above-header-button-container {
+    margin-bottom: 10px;
+  }
+
+}
+
+.admin-channel-container {
+  .channel-edit-container {
+    color: black;
+    margin: 0px 15px 20px;
+    align-self: stretch;
+
+    .edit-container {
+      align-self: stretch;
+      padding: 5px 15px 15px;
+      margin-top: 5px;
+
+      background: white;
+    }
+
+    textarea {
+      width: 80%;
+      min-height: 200px;
+    }
+
+    .save-button-container {
+      margin: 10px 0;
+    }
+
+    .user-list-container {
+      margin-top: 10px;
+      color: black;
+      font-family: 'Open Sans';
+
+      border-top: 1px solid #333;
+
+      tr {
+        padding-top: 3px;
+      }
+
+      .delete {
+        padding: 0 10px;
+
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  .admin-channel-list {
+  }
+
+  .video-preview video {
+    max-width: 100%;
+  }
+}
+
+.admin-channel-list {
+  .flex-table;
+  .flex-table-header-row;
+
+  margin-right: 15px;
+  margin-left: 15px;
+  padding-bottom: 20px;
+
+  .top {
+    .header-button-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  .admin-channel-row {
+    cursor: pointer;
+    &:hover {
+      background: rgba(0,0,0,0.1);
+    }
+    &.title-row:hover {
+      background: none;
+    }
+
+    .flex-table-content-row;
+
+    &.title-row {
+      cursor: default;
+      .name {
+        margin-left: 25px;
+      }
+    }
+
+    &.no-results {
+      .no-results-message {
+        width: 100%;
+        text-align: center;
+
+        font-weight: 200;
+        font-style: italic;
+      }
+    }
+
+    .image-column {
+      width: 125px;
+      margin-right: 10px;
+
+      &.image {
+        height: 41px;
+        margin-top: 5px;
+
+        align-self: stretch;
+
+        background: black no-repeat center center;
+        background-size: cover;
+        border-radius: 3px;
+      }
+    }
+    .edit, .delete, .video-edit {
+      width: 75px;
+      text-align: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .edit {
+      &:hover {
+        text-decoration: underline;
+        color: #333;
+      }
+    }
+
+    .video-edit {
+      height: 20px;
+
+      .icon {
+        height: 100%;
+        width: 35px;
+        margin-left: auto;
+        margin-right: auto;
+
+        background: url("/static/img/video-blue.png") no-repeat center center;
+        background-size: contain;
+      }
+    }
+
+    .delete {
+      height: 20px;
+
+      .icon {
+        height: 100%;
+        width: 20px;
+        margin-left: auto;
+        margin-right: auto;
+
+        background: url("/static/img/close-yellow.png") no-repeat center center;
+        background-size: contain;
+
+        &:hover {
+          background: url("/static/img/close-white.png") no-repeat center center;
+          background-color: red;
+          background-size: contain;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .name {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      flex: 1;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .private-channel-icon-container {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+
+        .icon-show {
+          height: 100%;
+          background: url("/static/img/lock-grey.png") no-repeat center center;
+          background-size: contain;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+
+@import "colors";
+
+.org-optum {
+  .brand-icon {
+    background-image: url('/static/img/oen/oen-logo-colors.png') !important;
+  }
+
+  .splash-container {
+    .splash-video-container {
+      video {
+        max-height: 223vw;
+        max-width: 223vh;
+      }
+      .cover {
+        background-color: rgba(0,0,0,0.6);
+      }
+    }
+    .sidebar-container {
+
+      /**** COLORS ****/
+      &.welcome-container {
+        background: #e87722;
+      }
+      &.login-container {
+        background: #eaaa00;
+      }
+      &.login-confirm-container {
+        background: #63666a;
+      }
+      &.onboarding-container {
+        background: #b1b3b3;
+      }
+
+      &.welcome-container {
+        .welcome-to {
+          font-size: 19px;
+          font-family: 'Open Sans';
+          font-weight: 600;
+        }
+        .logo {
+          display: none;
+        }
+        .brand {
+          margin-top: 5px;
+          font-size: 35px;
+          font-family: 'Open Sans';
+          font-weight: 300;
+          letter-spacing: normal;
+        }
+        .login-button {
+          color: white;
+          border: 1px solid white;
+          border-image: none;
+        }
+        .footer {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .home-container {
+    .body-container .sidebar-container {
+      .home-user-pane .cover .name {
+        color: @optum-yellow;
+      }
+      .header {
+        background: linear-gradient(to right,#f4a06d,#f47da8);
+
+        .icon {
+          width: 33px;
+          height: 33px;
+          background: url("/static/img/oen/optum-logo-white.png") no-repeat center center;
+          background-size: contain;
+        }
+      }
+      .footer {
+        background: linear-gradient(to right,#f4a06d,#f47da8);
+      }
+      .channel-type-selector .categories .category.active {
+        border-bottom: 4px solid @optum-orange-darker;
+      }
+    }
+    .right-menu {
+      .header {
+        background: linear-gradient(to right,#f4a06d,#f47da8);
+      }
+      .footer {
+        background: linear-gradient(to right,#f4a06d,#f47da8);
+      }
+    }
+  }
+
+  .channel-list-container .channel-list .channel-card .detail {
+    .channel {
+      color: @optum-yellow;
+    }
+    .watch-now {
+      background-color: @optum-orange;
+      &:hover {
+        background-color: #e1a25f;
+      }
+    }
+  }
+  .channel-share-container {
+    .share-title {
+      color: @optum-yellow;
+    }
+    .background .share-channel-title .channel-name {
+      color: @optum-yellow;
+    }
+    .send-button {
+      background: linear-gradient(to right,#dd7a39,#ffd193,#dd7a39);
+      background-size: 200%;
+    }
+  }
+}
